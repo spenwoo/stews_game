@@ -18,9 +18,10 @@ Good actions raise a stat; bad ones lower one. Over a long board that
 becomes a lifestyle, not a spreadsheet.
 
 **2. The negative path is genuinely tempting.**
-Negative perks are stronger *during* the run; positive perks pay out *at the end*.
-That asymmetry is the central gamble of the game. Getting this balance right is
-the single most important tuning job — see
+Negative perks are stronger *during* the run; positive perks used to pay only
+at the end. The Excel list now mixes in-run and retirement effects on both
+trees — the gamble is still "commit to a path," but the timing is per-perk.
+See [content/perks.md](content/perks.md) and
 [doc 05, Final Scoring](05-economy-and-investments.md#final-scoring).
 
 **3. Early choices compound.**

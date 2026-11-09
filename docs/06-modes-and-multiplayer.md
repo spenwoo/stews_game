@@ -204,11 +204,8 @@ mobile ([doc 07](07-art-and-presentation.md)).
 In async play this is also good **recap material** — "you passed Sam while you
 were away" is exactly the kind of beat that makes opening the app rewarding.
 
-**Undefined:** does proximity enable any *interaction* — trades, favors, Buds
-stat effects for travelling near others? There's an obvious hook here given a
-whole stat is about friendship, and right now Buds has no inter-player
-expression at all. See
-[Q10 in doc 08](08-open-questions.md#q10--should-proximity-enable-interaction).
+**Settled, narrowly.** The 10-tile radius is the camera rule, plus range for
+**Welcomer**, **Bully**, and **Networker**. No general nearby-player action menu.
 
 ## Notifications
 

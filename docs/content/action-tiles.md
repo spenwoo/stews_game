@@ -1,5 +1,8 @@
 # Action tiles
 
+**List:** [tiles/actions.csv](tiles/actions.csv). **Map:** [tiles/board.md](tiles/board.md).
+This page is the voice rules. New cards go in the CSV.
+
 **Format.** Player sees `prompt`, `good`, `bad`. After they pick, reveal
 `stat` and `±X`. Money applies immediately if present.
 

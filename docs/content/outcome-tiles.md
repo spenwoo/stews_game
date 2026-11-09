@@ -1,5 +1,8 @@
 # Outcome tiles
 
+**List:** [tiles/outcomes.csv](tiles/outcomes.csv). **Map:** [tiles/board.md](tiles/board.md).
+This page is the voice rules. New cards go in the CSV.
+
 No choice. Land (or stop), read, apply, continue. These are the luck and the
 pacing relief between decisions.
 
@@ -11,6 +14,7 @@ pacing relief between decisions.
 | karma | Karma change |
 | text | Player-facing one-liner |
 | gates | blank or `married` / `parent` / `no_children` |
+| tags | optional: `health` (ignored while **Roid Rage** is active) |
 | notes | Design intent |
 
 Use the money ladder: $0 / ±$2k / ±$5k / ±$10k / ±$25k / ±$40k. Karma in
@@ -55,7 +59,7 @@ with karma riding on about a third of them.
 
 | id | money | karma | text | gates | notes |
 | --- | --- | --- | --- | --- | --- |
-| wi-o01 | -10000 | 0 | Dental work nobody budgeted for. | | |
+| wi-o01 | -10000 | 0 | Dental work nobody budgeted for. | | health |
 | wi-o02 | +25000 | 0 | Bonus year. Don't get used to it. | | |
 | wi-o03 | -5000 | +8 | You cover a coworker's shortfall quietly. | | Money for karma |
 | wi-o04 | 0 | -5 | You take credit for work that wasn't yours. | | |

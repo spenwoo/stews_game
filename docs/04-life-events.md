@@ -4,23 +4,37 @@ Life events are the structural beats of a run. All are mandatory stops
 ([doc 03](03-board-and-tiles.md#life-event-tiles)) so the shape of a game never
 depends on a roll.
 
-**Proposal — placement:**
+**Settled — placement** (named stops on the branched map, not 72-tile
+numbers). Full topology: [content/tiles/board.md](content/tiles/board.md).
 
-| Event | Board position | Season |
+| Event | Where | Season |
 | --- | --- | --- |
-| University fork | Pre-board (tile 0) | — |
-| Marriage | 20 | Fall |
-| Buy a House | 28 | Fall |
-| Children I | 34 | Fall/Winter |
-| Children II | 44 | Winter |
-| Mid-Life Crisis | 50 | Winter |
-| Retirement | 72 | Spring |
+| Youth stretch | **19** tiles after start | Summer |
+| University | STOP, then college **or** work (**18**) | Summer |
+| Career | STOP, then grad **or** career-track (**9**), then **36** spine | Fall |
+| Marriage | STOP, then Buds ≤ −25 **or** open (**16**), then **25** spine | Fall |
+| House I | STOP, then **8** spine | Fall |
+| Brawn fork | Brawn ≥ +25 **or** open (**16**), then **31** spine | Fall / winter |
+| Children I | STOP, then Brains ≥ +75 **or** open (**16**), then **13** spine | Winter |
+| House II | STOP, then **15** spine | Winter |
+| Children II | STOP, then **11** spine | Winter |
+| House III | STOP, then **9** spine | Winter |
+| Buds fork | Buds ≥ +50 **or** open (**14**), then **26** spine | Winter |
+| Children III | STOP, then **12** spine | Winter |
+| Mid-Life Crisis | STOP, then **20** spine | Winter |
+| House IV | STOP, then **38** spine | Spring |
+| Retirement | STOP | Spring |
 
 Promotions and layoffs aren't tiles — they trigger at paydays.
 
 ---
 
 ## University
+
+**Settled: not tile 0.** A short youth stretch comes first so stats can move
+before the door. Brains (and Brawn/Buds class keys) then gate which schools
+are available. See
+[doc 12](12-karma-health-housing-start.md#4-youth-stretch-then-college).
 
 **Spec.** Two paths:
 
@@ -29,19 +43,21 @@ Promotions and layoffs aren't tiles — they trigger at paydays.
   If undergrad is chosen, the player may then also choose **graduate school**,
   costing additional funds and opening enhanced versions of certain careers.
 
-**Proposal — three resulting career tiers:**
+**Proposal — three resulting career tiers.** Tuition is now the named-school
+sticker in [content/schools.md](content/schools.md), not a flat $80k.
 
 | Path | Cost | Tiles spent | Career pool |
 | --- | --- | --- | --- |
-| No school | $0 | 0 | Tier 1 only |
-| Undergrad | $80k (loan allowed) | 6 | Tiers 1–2 |
-| Undergrad + grad | $160k total | 12 | Tiers 1–3 |
+| No school | $0 | 18 (`work` fork) | No-school jobs only |
+| Undergrad | $70k–$240k by campus tier (loan allowed) | 18 (`college` fork) | No-school + college-gated |
+| Undergrad + grad | undergrad sticker + **$100k** | 18 + 9 (`college` then `grad`) | All jobs |
 
-The trade is time and debt against earning ceiling. With 12 paydays in a game,
-spending 12 tiles on grad school costs you roughly **2 paydays of income** on top
-of the tuition, so the tier-3 salary premium has to be large enough to repay both
-across the ~9 remaining paydays. That's a concrete balance equation to solve
-rather than a guess — see
+College and work are the **same length** and rejoin at Career, so education is
+no longer a payday-count tax. The trade is tuition vs gig cash on those
+forks, plus the career pool. Grad is a short 9-tile loop with the same
+payday count as career-track. Map:
+[content/tiles/board.md](content/tiles/board.md). Finding 5 assumed the old
+6/12 tile spend:
 [doc 09, Finding 5](09-balance-model.md#finding-5--education-pays-by-about-the-right-amount).
 
 Starting a game in debt is also the first real test of the loan system
@@ -52,21 +68,28 @@ consolation prize.
 ## Careers
 
 **Proposal — structure.** Each career has a tier (gated by education) and three
-stages. Players draw a career from their eligible pool.
+stages. Players draw from their eligible pool.
+
+**Settled — exclusive in multiplayer.** Career titles are unique in a lobby.
+The first player to the career event picks from what's left (proposal: offered
+3 from remaining eligible, pick 1). Once held, nobody else can take that
+title until it's given up (layoff, Nepo Baby, certain crises). That's the
+payoff for being ahead. Solo uses the full list. See
+[ahead vs. behind](03-board-and-tiles.md#ahead-vs-behind).
 
 | Stage | Unlock | Salary |
 | --- | --- | --- |
-| Base | On draw | Career base |
-| Senior | After 4 paydays in the career | ~1.5x base |
-| Executive | After 8 paydays in the career | ~2.2x base |
+| Base | On draw | Rolled from five bands around that stage's mid |
+| Promotion 1 | After 4 paydays in the career | That stage's mid, five-band roll |
+| Promotion 2 | After 8 paydays in the career | That stage's mid, five-band roll |
 
 Paydays counted **in the current career** — a layoff resets the counter, which is
-what makes layoffs hurt beyond the salary cut.
+what makes layoffs hurt beyond the salary cut. Old 1.5× / 2.2× multipliers are
+superseded; each stage has its own mid on the sheet.
 
-Each career should also carry a small **perk** at Senior and Executive that isn't
-money, so careers feel different from one another rather than being salary
-numbers with job titles attached. Open: what those perks are, and how many careers
-per tier. See [Q6 in doc 08](08-open-questions.md#q6--career-list-and-career-perks).
+Each career carries **one** special perk (not a separate Senior / Exec perk).
+Some rows are still blank. Full list: [content/careers.md](content/careers.md).
+See [Q6 in doc 08](08-open-questions.md#q6--career-list-and-career-perks).
 
 ## Promotions and layoffs
 
@@ -203,31 +226,36 @@ When a divorce fires:
 The mid-life crisis face `c-divorce` is a second, dramatic path — a forced
 confrontation rather than a slow leak. Same aftermath.
 
-## Buy a House
+## Housing tiles
 
-**Spec.** The player is offered a random selection of **3 potential houses** from
-a larger deck.
+**Settled.** **Four** housing STOPs (House I–IV, table above).
+Each is a mandatory stop. What it offers depends on whether you already own
+a house:
 
-**Proposal.** Each house card carries a purchase price and an end-game sale value
-drawn from a range, so housing is a genuine investment decision with spread
-rather than a fixed cost:
+| You currently… | The tile offers |
+| --- | --- |
+| Own no house | Draw **3** remaining houses. **Cash** (100% of list) or **mortgage** (20% interest down that does not reduce principal, then full list in 20 payday drafts = 120% total), or decline into a **rental** |
+| Already own a house | Stay, or **move** to a higher-list-price house. Flat $10k plus the value gap added to remaining mortgage, then reset over the next 20 paydays |
 
-| Tier | Price | Sale value at retirement |
-| --- | --- | --- |
-| Starter | $120k | $100k – $180k |
-| Mid | $250k | $200k – $380k |
-| Premium | $450k | $350k – $700k |
+**Settled — exclusive in multiplayer.** The house you *own* is removed from
+the lobby pool until sold or foreclosed. The two you pass on go back into the
+deck. Rentals are not exclusive. Solo: full deck.
 
-Cheap houses are safe; expensive ones are leveraged bets that can outperform the
-investment account or sink you. Since you only ever see 3 of the deck, your
-housing options are a real constraint, not a menu.
+**Settled — perks hidden until purchased** (houses and rentals). Draw shows
+name and price only.
 
-**Undefined:** can you decline to buy entirely? Can you buy more than one house,
-or upgrade later? Does a house carry ongoing cost?
+You may **sell at any time** for current value (list + appreciation), then
+must pick a rental. Later tiles still let a renter buy. Two missed mortgage
+paydays (grace periods) and you are **foreclosed** — house gone, no equity
+kept, pick a rental.
+
+Card list, prices, hidden perks, rentals, and worked examples:
+[content/houses.md](content/houses.md). Full rules:
+[doc 12](12-karma-health-housing-start.md#3-homeownership).
 
 ## Children
 
-**Spec.** Two separate events, each offering: **birth** (small money cost),
+**Spec.** **Three** separate events, each offering: **birth** (small money cost),
 **adoption** (large money cost, gain of karma), or **no children** (continue).
 
 **The gap.** As specified, children cost money and sometimes give karma, and
@@ -244,14 +272,14 @@ negative; value lives in content and late-game payoffs.
 | One-time cost | At the event | Birth cheap (~$10k), adoption expensive (~$40k) + karma. Doubled if married |
 | Payday upkeep | Every payday after | ~$4k per child. **Doubled if married.** This is what makes one vs. two different |
 | Parent-only tiles | Fall / winter / spring | Same hidden ±X action rule, plus some outcomes |
-| College-for-kid | Optional stop after Children II | Pay a lot, gain karma + score. Can decline |
+| College-for-kid | Optional stop after Children III | Pay a lot, gain karma + score. Can decline |
 | Spring slice | Late board | Parents: grandkids, being looked after, empty nest. `no_children`: travel, mentoring, second act — declining is a path, not an empty skip |
 | Legacy bonus | Retirement | Per child, scaled by karma and Buds — "how they turned out" |
 | "Your kid became X" | Retirement recap | Flavor + small prestige, weighted by your stats |
 
-The second children stop can still say no, even if the first said yes. Kids
-survive a divorce; upkeep and parent tiles continue. Authoring notes:
-[content/family.md](content/family.md).
+Each later children stop can still say no, even if an earlier one said yes.
+Cap is **3** from these events. Kids survive a divorce; upkeep and parent
+tiles continue. Authoring notes: [content/family.md](content/family.md).
 
 ## Mid-Life Crisis
 
@@ -268,7 +296,7 @@ karma softening or inverting the outcome:
 | Health scare | Large cost, Brawn −− | Moderate cost, Brawn − |
 | Reconnect with old friends | Cost, Buds + | Buds ++, unlocks a spring-season bonus |
 | Back to school | Cost, lose 3 tiles of progress | Education tier +1 |
-| Big move | Forced house sale at low end of range | House sells at high end |
+| Big move | Forced house sale at current value, must rent | House sells at current value, then a free move draw (upgrade rules, $10k waived) |
 
 This is the clearest single place where karma earns its keep: one unavoidable,
 high-stakes moment where a whole game's worth of small moral choices cashes out.

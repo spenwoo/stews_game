@@ -72,41 +72,40 @@ stat is content work plus one number, not a refactor.
 
 ### Karma
 
-Karma is a separate resource, not a stat. It has no perk tiers. Its jobs are:
+**Settled.** Karma is a separate **currency**, not a stat and not a 0–100
+meter. No cap. Hidden from other players. It moves whenever a tile or event
+says so (loans, adoption, outcomes, riders), flavors the mid-life crisis, and
+adds an uncapped line at retirement so two similar-looking lives can finish
+far apart. Details:
+[doc 12](12-karma-health-housing-start.md#1-karma).
 
-- Gained and lost on outcome tiles.
-- Reduced by taking bank loans ([doc 05](05-economy-and-investments.md#loans)).
-- Gained by adopting children ([doc 04](04-life-events.md#children)).
-- **The input to the mid-life crisis resolution**
-  ([doc 04](04-life-events.md#mid-life-crisis)) — its single most important use.
-- A contributor to final score.
+### Opening class (natures)
 
-Because karma sits outside the perk system, it needs its own range and its own
-reason to be managed turn to turn. See
-[Q1 in doc 08](08-open-questions.md#q1--how-does-karma-work-as-a-separate-resource).
+**Settled direction.** The old "spend 10 points at creation" idea is replaced.
+Pick one **class**: +15 in one stat, −15 in another, or **Ambivalent** (all zero).
+Seven total. Youth tiles then move those numbers before the University STOP,
+so the opening bias is a start, not a prison.
 
-### Unresolved: do stats start at zero?
-
-The concept says both that players assign skill points during creation and that
-every stat starts at zero. Those can't both hold.
-
-**Proposal.** Stats start at zero and the creation screen gives you a small
-budget — **10 points, max +4 into any single stat** — to spend. You begin
-slightly specialized rather than blank, the starting spread stays narrow enough
-that it doesn't decide the game, and "starts at zero" stays true as the baseline.
-See [Q5 in doc 08](08-open-questions.md#q5--starting-skill-points).
+Full table, names, and the Brawn/Buds early-game doors (scholarship, legacy
+letter) so Brains isn't the only reason to exist:
+[doc 12](12-karma-health-housing-start.md#5-opening-class--nature).
 
 ## Perk tiers
 
 **Spec.** As stats rise and fall, players unlock levels with perks. Negative
-perks are more powerful; positive perks unlock bonuses at the end of the game.
-Choosing a path is a gamble.
+perks lean in-run and swingy; positive perks mix retirement bonuses with
+in-run effects (the Excel list is the source). Choosing a path is a gamble.
 
-**Proposal — threshold layout.** Tiers at ±25, ±50, ±75, ±100, giving four
-positive and four negative tiers per stat — **24 perks total**. Perks are
-cumulative while you hold the threshold, and are **lost if your stat drops back
-below it** — so a negative build can be walked back, at the cost of the turns it
-takes to do it.
+**Settled — threshold layout.** Tiers at ±25, ±50, ±75, ±100. At each
+threshold the player **picks one of two perks**. Earlier picks never gate
+later ones. 3 stats × 2 directions × 4 tiers × 2 choices = **48 perks
+authored**; a fully committed stat-direction holds **4** of them.
+
+**You only have a perk while you currently hold that level.** Crossing +50
+unlocks a pick; if the stat falls to +40 that perk turns off until you climb
+back. The *choice* is remembered — you do not re-pick. Same rule on the
+negative side. Worked example and the full list:
+[content/perks.md](content/perks.md).
 
 Reachability is a board-length problem, not a delta problem. Action tiles move a
 stat by a fixed **X (default 10)**, hidden until after the choice
@@ -148,11 +147,16 @@ still [Q2](08-open-questions.md#q2--how-harshly-should-uncommitted-play-be-punis
 So the perks stay writable and legible:
 
 - A perk is one sentence, with one effect, no sub-conditions.
-- Positive perks never pay out mid-game; negative perks never pay out at the end.
+- At each threshold, two options of similar power and different shape. The
+  player picks one; that pick never restricts a later threshold.
+- **Active only while the stat currently meets that threshold.** Drop below
+  it and the perk goes dormant, even if you already unlocked it.
+- Timing is per-perk on the sheet — positives are no longer "retirement only."
+  See [content/perks.md](content/perks.md).
 - Negative perks should be **swingy** — windfalls, gambles, double-or-nothing —
   rather than steady income. A lot of the negative path's cash should already
   come from skipping costly "good" actions on the tiles themselves.
-- No perk may permanently remove another player's agency (multiplayer stays
-  friendly).
+- **Bully** (Brawn −25) takes **$500** from a player within 10 tiles whenever
+  they are paid. Early on purpose, so it can tick for most of the run.
 - Action tiles move stats by a fixed **X, default 10**. Life events may move
   more (±10 to ±20) because there are few of them.

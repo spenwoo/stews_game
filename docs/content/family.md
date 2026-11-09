@@ -61,14 +61,13 @@ A second path: mid-life crisis card `c-divorce`
 
 ---
 
-## Children events (two stops)
+## Children events (three stops)
 
 Each stop:
 
 1. Birth (~$10k) / Adoption (~$40k, karma up) / No child this time.
 2. If yes, increment children. `parent` tiles can draw.
-3. Second stop can still say no. Cap is 2 from these events unless we add
-   more later.
+3. Later stops can still say no. Cap is **3** from these events.
 
 **Value mix (settled):**
 
@@ -85,7 +84,7 @@ Each stop:
 
 Kids survive divorce. Upkeep does not stop.
 
-**College-for-kid** sits after Children II, before spring. Decline is allowed.
+**College-for-kid** sits after Children III, before spring. Decline is allowed.
 Paying is the positive-path-pays-later beat in miniature.
 
 ---

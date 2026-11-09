@@ -94,16 +94,15 @@ Collected so they're accounted for:
 | Main board view | 3D road, spinner, own-state summary |
 | Action tile prompt | Two options; stat consequences reveal *after* the pick |
 | Outcome tile card | Single result, acknowledge and continue |
-| Life event screens | Larger, distinct per event; house picker shows 3 cards |
+| Life event screens | Larger, distinct per event; house picker shows 3 cards (name + price only; perk hidden) then cash vs mortgage, or a rental list |
 | Investment interface | Openable any time; balance, deposit, withdraw-with-delay |
 | Player HUD | All players' public state |
-| Stats & perks sheet | Five tracks with thresholds, current perks, next tier |
+| Perk pick | Fires once when you first cross a threshold: two named options, one pick |
+| Stats & perks sheet | Three tracks, eight thresholds, which pick is remembered, which are currently on |
 | Retirement / scoring | Score breakdown, then standings or high-score table |
 
 The **stats & perks sheet** is the one most likely to be underestimated. Three
-stats with eight thresholds each, perks that can be lost by crossing back below a
-line, and a score multiplier based on *net* tiers
-([doc 05](05-economy-and-investments.md#why-scoring-is-on-net-tiers)) — players
-need to see at a glance where they stand, what the next threshold costs, and that
-a negative tier cancels a positive one. Otherwise the central gamble of the game
-is invisible and nobody plays it deliberately.
+stats, eight thresholds, two picks per threshold, and perks that go dormant
+when you drop below the line. Players need to see at a glance: current value,
+next threshold, which pick they locked, and which of those are *on right now*.
+Otherwise the central gamble is invisible.

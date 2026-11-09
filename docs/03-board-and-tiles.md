@@ -2,10 +2,13 @@
 
 ## Structure
 
-**Spec.** A defined path every player travels, with minor deviations driven by
-life events. Three main tile types: salary, action, and outcome. Tile content
-correlates to how far along the board you are, so later tiles are thematically
-later-in-life.
+**Spec.** A defined path every player travels, with **six short detours**
+that split and rejoin (college / work, grad / career, Buds −25, Brawn +25,
+Brains +75, Buds +50). Most tiles sit on the shared spine. Three main tile
+types: salary, action, and outcome. Tile content correlates to how far
+along the board you are.
+
+Map and slot list: [content/tiles/board.md](content/tiles/board.md).
 
 ## Tile types
 
@@ -75,10 +78,10 @@ crisis, and the structural beats of the game would be luck-dependent.
 ## Board length and movement
 
 **Spec intent.** The board is long — lots of life tiles — so a player who
-commits can actually max a skill tree. 72 tiles was a placeholder from an
-earlier pacing pass and is **too short** for that. Exact length is still open;
-the constraint is not "how short can we go" but "how many decisions does a
-committed player resolve before retirement."
+commits can actually max a skill tree. 72 tiles was a placeholder and is
+**too short**. The working map is ~**369** squares on a typical path
+(~52 action landings at a 1–6 spinner). Forks are 9–18 tiles; **~75%** of
+walked tiles are spine.
 
 With X = 10 and three stats, a fully committed "always good" player spreads
 gains across whatever stats the tiles happen to touch:
@@ -94,20 +97,60 @@ So the design target is **roughly 30+ action-tile landings per run**, plus
 outcome tiles, salary tiles, and mandatory life events. That is a much bigger
 board than 72, *or* a different rule for how often tiles resolve.
 
-**The landing problem.** A 1–6 spinner averages 3.5 spaces, so you only *land
-on* about 30% of tiles. Doubling the board does not double the decisions unless
-movement shrinks too. Three ways to hit 30 action landings:
+**The landing problem, with a lean.** A 1–6 spinner (1–7 with Speedster)
+averages ~3.5 spaces, so you only *land on* about 30% of tiles. That skip is
+now load-bearing — it's how "ahead vs. behind" stays a real trade, not a
+cosmetic race. So:
 
-| Approach | What it does | Cost |
-| --- | --- | --- |
-| **A. Long board, smaller spinner (1–3)** | More landings per tile of board | More turns → longer async games |
-| **B. Action tiles are stop spaces** | You resolve every action tile you reach, like life events | Every action is mandatory; board can stay shorter |
-| **C. Pass-and-resolve for action tiles** | Landing *or passing* an action tile triggers it | Dense, fast, easy to overshoot the decision budget |
+- **Salary tiles** still pay on land *or* pass.
+- **Life events** are still mandatory stops.
+- **Action and outcome tiles resolve on land only.** Passing skips them.
+  That rules out pass-and-resolve (C) and all-actions-as-STOP (B), because
+  both would give every player the same action count.
 
-This is the real board-length question now. See
-[Q4 in doc 08](08-open-questions.md#q4--how-do-we-get-enough-action-landings).
+Hitting ~30 action landings then means a **long board**, not denser
+resolution. Spinner size (1–3 vs 1–6) is still tunable. See
+[Q4](08-open-questions.md#q4--how-do-we-get-enough-action-landings).
 
-Salary tiles still pay on pass. Life events are still mandatory stops.
+## Ahead vs. behind
+
+**Settled.** Neither is strictly better. Position is a trade.
+
+| Ahead | Behind |
+| --- | --- |
+| First dibs on **exclusive** careers and houses — once taken, nobody else can pick that card unless it's given up later | Worse leftover pool |
+| Hits life events first | Hits them later, but sees what the pack already claimed |
+| High rolls (and Speedster's 7) **skip** action/outcome tiles | Low rolls land more often → more stat decisions, more tile money |
+
+**What "skip" means.** You only resolve the square you stop on. Squares you
+hop over do not fire (except salary, which pays on pass, and life events,
+which force a stop).
+
+Example: you sit on tile 20. Tiles 21, 22, 23, 24 are action tiles.
+
+- Roll **1** → land on 21. You play that action. Still on this stretch.
+- Roll **4** → land on 24. You play 24 and never see 21–23. Those lives
+  didn't happen to you.
+
+Do that for a whole board and the high-roller is physically further along
+(first to the house event, better leftover deck) and has *fewer* action
+cards in their recap. The crawler is behind and has been making more
+choices. That's the trade. Neither is a winning strategy by itself.
+
+Careers and houses are a **shared exclusive pool** in multiplayer. Solo: the
+whole deck is yours, exclusivity doesn't matter.
+
+**Given up later** — the card returns to the pool when:
+
+- A career is lost (layoff, Nepo Baby dump, mid-life "quit to chase a dream")
+- A house is sold, foreclosed, or left behind on a move (card returns; the new house leaves the pool)
+
+Spouse careers draw from the same exclusive pool. Two players cannot hold
+"Engineer" at once; a spouse taking it also removes it.
+
+Speedster leans you ahead (first dibs, fewer actions). Second Chancer spends
+a spin to grab a tile you would have skipped or hated. That's the two
+movement perks arguing both sides of this trade.
 
 ## Seasons
 
@@ -151,11 +194,11 @@ largest content job in the project. Lists live in
 
 ## Deviations from the main path
 
-The concept mentions minor deviations off the main path. The ones identified so
-far are the **university track** and the **grad school extension**
-([doc 04](04-life-events.md#university)) — short side loops that cost tiles and
-money and rejoin the main path.
+**Settled.** Six forks, **9–18 tiles**, split and rejoin. Most of the board
+is the spine. Qualify and you choose; fail the gate and you take the open
+side. Stat-gated sides are roughly equal in money to the open side and lean
+actions at the required stat. College / work is the education trade (tuition
+vs gigs, career pool), not a different payday count.
 
-Open: whether any mid-game or late-game branches exist, or whether the path is
-single after the education fork. See
-[Q8 in doc 08](08-open-questions.md#q8--are-there-branches-after-university).
+Full map, gates, and slot database:
+[content/tiles/board.md](content/tiles/board.md). Q8 is closed.

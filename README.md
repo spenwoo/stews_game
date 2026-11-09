@@ -12,7 +12,7 @@ shot clock.
 mechanics and balance before anything gets built.
 
 **Coming back later?** Open [docs/11-pickup-checklist.md](docs/11-pickup-checklist.md).
-Next job: perk names.
+Next job: fill the tile CSVs strip by strip, starting with youth then college / work.
 
 ## Design docs
 
@@ -29,7 +29,8 @@ Next job: perk names.
 | [09 — Balance Model](docs/09-balance-model.md) | Simulation results: perk parity, education, marriage, children |
 | [10 — Content Inventory](docs/10-content-inventory.md) | What to author, in what order, and how big |
 | [11 — Pickup checklist](docs/11-pickup-checklist.md) | Settled rules, open questions, content still to write |
-| [Content lists](docs/content/README.md) | Action tiles, outcomes, careers, houses, perks, crises, family |
+| [12 — Karma, health, housing, start](docs/12-karma-health-housing-start.md) | Karma bands, ailments, mortgage, youth board, opening classes |
+| [Content lists](docs/content/README.md) | Tile database, careers, houses, perks, schools, crises, family |
 
 ## Reading the docs
 

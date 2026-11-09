@@ -9,13 +9,19 @@ Legend: `[x]` settled in the docs · `[ ]` still open or unwritten.
 
 ## Where you left off
 
-- [ ] **Write perk names** (and one-line effects) for Brains / Brawn / Buds at
-      ±25, ±50, ±75, ±100 — 24 total. Skeleton is
-      [content/perks.md](content/perks.md). Do this before bulk-writing tiles
-      so authors know what "deep Brawn" actually *does*.
-- [ ] Then pick **Q4** (how action tiles resolve — STOP vs. long board vs.
-      pass-and-resolve) so we know how big the tile lists need to be.
-- [ ] Then bulk-write action tiles, season by season.
+- [x] Excel uploaded to `data_files/Life Data File.xlsx` (user-owned; copies
+      live in `docs/content/`)
+- [x] Perks / careers / houses / schools copied from that sheet
+- [x] Housing: cash vs mortgage (20% interest down + full list over 20
+      paydays), 2 grace then foreclosure, sell-to-rent, **four** buy/move
+      tiles, hidden house/rental perks
+- [ ] Review the copied lists for name/effect tweaks before bulk-writing tiles
+- [ ] Confirm leftover [doc 12](12-karma-health-housing-start.md) items:
+      Alzheimer's infliction rate, karma $/pt
+- [x] Branched map sketched (six short forks, majority spine) and tile CSV
+      database started
+- [ ] Fill [actions.csv](content/tiles/actions.csv) / [outcomes.csv](content/tiles/outcomes.csv)
+      strip by strip, starting with `youth` then `college` / `work`
 
 ---
 
@@ -27,9 +33,12 @@ Legend: `[x]` settled in the docs · `[ ]` still open or unwritten.
       (friendship). Range −100 to +100. May add stats later; keep the system
       data-driven
 - [x] Karma is a **separate resource**, not a fifth stat
-- [x] Perk tiers at ±25 / ±50 / ±75 / ±100. Lost if you cross back
-- [x] Positive perks pay at **retirement**. Negative perks pay **during** the run
-      and should be swingy, not a stipend
+- [x] Perk tiers at ±25 / ±50 / ±75 / ±100. **Two choices** at each, independent
+      of earlier picks. Active only while you currently hold that level. 48 total
+- [x] Perk effects are whatever the sheet says — mix of in-run and retirement
+      on both trees. Negative perks still lean swingy, not a stipend
+- [x] Careers and houses are **exclusive** in multiplayer; land-only action
+      tiles so ahead skips more decisions
 - [x] Final score uses **net** tiers (negative cancels positive)
 - [x] Action tiles: two options, **hidden** ±X until after the pick. Good action
       = +X, bad action = −X, same magnitude. Expected value of a random pick is
@@ -42,8 +51,8 @@ Legend: `[x]` settled in the docs · `[ ]` still open or unwritten.
 - [x] Seasons: summer → fall → winter → spring (retire in spring)
 - [x] Board is **intentionally long** so a committed player can max a tree
       (~30 action resolutions at X=10)
-- [x] Character creation: body, hair style/color, shirt style/color, pants
-      style/color. Cosmetics only
+- [x] Character creation: body, hair/shirt/pants cosmetics, then an **opening
+      class** (+15/−15 nature, or Ambivalent)
 - [x] Minimalistic clean 3D characters, third-person tracking camera
 - [x] Mobile first. Solo = high score, one sitting. Multiplayer = up to 6,
       **async over days**, push notification on your turn, no shot clock
@@ -56,11 +65,18 @@ Legend: `[x]` settled in the docs · `[ ]` still open or unwritten.
 - [x] Other players visible on the road only within **10 tiles** (render rule,
       not an info rule)
 - [x] Education: no school / undergrad / undergrad+grad → career tiers 1 / 2 / 3
-- [x] Careers have Base / Senior / Executive; promotions after 4 and 8 paydays
-      in the current job
+- [x] Careers have Base / Promo 1 / Promo 2; promotions after 4 and 8 paydays
+      in the current job; salary is a five-band roll around that stage's mid
+- [x] Housing: cash (100% of list) or mortgage (20% interest down that does
+      not reduce principal, then full list over 20 paydays = 120% total).
+      Two grace periods then foreclosure (no equity kept). Sell anytime →
+      must rent. Later tiles: buy if none owned, or move up ($10k + value
+      gap onto a fresh 20-payment mortgage). Perks hidden until purchased
 - [x] Layoff chance at payday, affected by Brains + Buds; reroll career at base
-- [x] Investments: deposit anytime, withdraw takes **one turn**, returns can
-      lose money, shortfall → bank loan + karma hit
+- [x] Investments: deposit anytime, withdraw takes **one turn**, shortfall →
+      bank loan + karma hit. **Shared spin market:** any player's roll ticks
+      every invested balance and every owned house (housing uses the calmer
+      table). Tile one-off shocks come later.
 - [x] Never tie returns (or anything else) to **wall-clock** time
 
 ### Marriage (settled this session)
@@ -78,8 +94,8 @@ Legend: `[x]` settled in the docs · `[ ]` still open or unwritten.
 - [x] Mid-life crisis can also force/offer divorce
 
 ### Children (settled this session)
-- [x] Two stops: birth (cheap) / adoption (expensive + karma) / none
-- [x] Second stop can still say no
+- [x] Three stops: birth (cheap) / adoption (expensive + karma) / none
+- [x] Later stops can still say no. Cap 3 from these events
 - [x] Payday **upkeep** ~$4k per child (doubled if married)
 - [x] Parent-only tiles in fall / winter / spring
 - [x] Optional **college-for-kid** stop (pay now, karma + score later)
@@ -101,20 +117,22 @@ Full writeups: [08-open-questions.md](08-open-questions.md).
 - [ ] **Q4 — How action tiles resolve.** STOP spaces vs. long board + small
       spinner vs. pass-and-resolve. **Blocks tile-list size and async duration**
 - [ ] **Q4b — Confirm pipelined turns** feel like "taking turns"
-- [ ] **Q5 — Starting skill points** at creation, or cosmetics only?
+- [x] **Q5 —** opening class / nature (+15/−15), not a 10-point budget
 - [ ] **Q5b — Fourth/fifth stat** someday? Cheaper to name candidates before
       perk authoring finishes
-- [ ] **Q6 — Career stage perks** (Senior / Exec, non-money)
+- [ ] **Q6 leftover —** fill blank career special perks; confirm five salary bands
 - [ ] **Q7 — How punishing is a layoff** (severance, keep education tier, etc.)
-- [ ] **Q8 — Branches after university?**
+- [x] **Q8 —** six short forks that rejoin; most tiles on the spine
 - [ ] **Q9 leftover —** do perk *names* show on the lives sheet?
-- [ ] **Q10 —** does 10-tile proximity do anything besides render?
+- [x] **Q10 —** proximity is camera + Welcomer / Bully / Networker
+- [x] Housing decline / rent / sell / upgrade-only move (doc 12)
+- [x] Ahead vs behind: exclusive careers/houses vs. more action landings
 
 Smaller, not blocking content:
 
 - [ ] Spinner 1–6 vs. 1–3 vs. dice
-- [ ] Decline / upgrade / skip buying a house?
-- [ ] House upkeep?
+- [x] Four housing tiles (House I–IV)
+- [x] House appreciation table (shared spin, calmer than investments)
 - [ ] Game ends when first player retires, or everyone finishes?
 - [ ] Board-overview camera?
 - [ ] How far ahead tiles are legible on the road
@@ -131,16 +149,19 @@ Lists: [content/](content/README.md).
 
 Fill order:
 
-1. [ ] **Perks** — 24 names + effects. [content/perks.md](content/perks.md)
-      ← **you are here**
-2. [ ] **Careers** — finish 6/6/5 list; write every Senior and Exec perk.
+1. [x] **Perks** — 48 names + effects copied.
+      [content/perks.md](content/perks.md) ← review, then tiles
+2. [x] **Careers** — 47 titles copied; fill blank special perks.
       [content/careers.md](content/careers.md)
-3. [ ] **Houses** — 18 names are sketched; confirm prices/tags.
+3. [x] **Houses** — 29 houses + 5 rentals copied.
       [content/houses.md](content/houses.md)
-4. [ ] **Action tiles** — examples exist; ~160 total (40/season), plus gated
-      family cards. [content/action-tiles.md](content/action-tiles.md)
-5. [ ] **Outcome tiles** — examples exist; ~100 total.
-      [content/outcome-tiles.md](content/outcome-tiles.md)
+3b. [x] **Schools** — named campuses and tuition tiers.
+      [content/schools.md](content/schools.md)
+4. [ ] **Action tiles** — 60 seeded in [content/tiles/actions.csv](content/tiles/actions.csv);
+      fill to ≥12 per fork side. Voice rules in [content/action-tiles.md](content/action-tiles.md)
+5. [ ] **Outcome tiles** — 40 seeded in [content/tiles/outcomes.csv](content/tiles/outcomes.csv);
+      fill to ≥8 per fork side.
+5b. [x] **Board map** — [content/tiles/board.md](content/tiles/board.md)
 6. [ ] **Mid-life crises** — 8–12. [content/midlife-crises.md](content/midlife-crises.md)
 7. [ ] **Gated family cards** — quotas in [content/family.md](content/family.md)
       (`married` ~12+6, `parent` ~16+8, `no_children` ~8+4, `divorced` ~4+2)
@@ -169,9 +190,9 @@ Fill order:
 | Positive perk | ~30% net worth per net tier |
 | Negative perk | swingy in-run; model used ~$18k/payday/tier as a *budget*, not a stipend |
 | Auto-play timeout | 24h |
-| Salary bands | T1 $25–35k, T2 $40–50k, T3 $55–70k per payday |
-| Senior / Exec | 1.5× / 2.2× after 4 / 8 paydays in the job |
-| House bands | ~$120k / $250k / $450k |
+| Salary bands | Stage mids on the career sheet (~$30k–$250k); five-band roll around mid |
+| Promo 1 / 2 | After 4 / 8 paydays in the job; own mid, not 1.5× / 2.2× |
+| House list | $60k–$600k; cash = 100% of list; mortgage = 20% interest + full list over 20 paydays; rent $0–$40k / payday |
 
 ---
 
